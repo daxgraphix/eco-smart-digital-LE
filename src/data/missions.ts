@@ -30,7 +30,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Data Center', back: 'A physical facility used to house computer systems and associated components.' },
         { front: 'Greenhouse Effect', back: 'The process by which radiation from a planet\'s atmosphere warms the planet\'s surface.' },
         { front: 'SD vs HD', back: 'Standard Definition uses significantly less data and energy than High Definition.' },
-        { front: 'Email Impact', back: 'Unnecessary emails and large attachments contribute to server load and energy use.' }
+        { front: 'Email Impact', back: 'Unnecessary emails and large attachments contribute to server load and energy use.' },
+        { front: 'Server', back: 'A powerful computer that stores data and delivers it over the internet.' },
+        { front: 'Cloud Computing', back: 'Using remote servers to store and process data instead of local devices.' },
+        { front: 'Bandwidth', back: 'The maximum rate of data transfer across a network path.' },
+        { front: 'Streaming', back: 'Broadcasting data continuously over the internet in a steady stream.' },
+        { front: 'CO2 Equivalent', back: 'A measure that expresses different greenhouse gases in terms of CO2.' },
+        { front: 'Energy Efficiency', back: 'Using less energy to achieve the same output or result.' },
+        { front: 'Carbon Offset', back: 'Compensating for emissions by funding an equivalent reduction elsewhere.' }
       ]
     },
     challenge: {
@@ -55,6 +62,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'About 10%', correct: false }
           ],
           feedback: 'The digital sector has a footprint comparable to the aviation industry.'
+        },
+        {
+          text: 'Which streaming quality uses the LEAST energy?',
+          options: [
+            { text: '480p (SD)', correct: true },
+            { text: '1080p (Full HD)', correct: false },
+            { text: '4K Ultra HD', correct: false }
+          ],
+          feedback: 'Standard Definition uses up to 80% less energy than HD streaming.'
+        },
+        {
+          text: 'How much CO2 does a single search query emit?',
+          options: [
+            { text: 'About 0.2g', correct: true },
+            { text: 'About 5g', correct: false },
+            { text: 'About 50g', correct: false }
+          ],
+          feedback: 'While it seems small, billions of searches per day add up quickly.'
+        },
+        {
+          text: 'By 2025, data centers will consume what percentage of world electricity?',
+          options: [
+            { text: 'About 5%', correct: false },
+            { text: 'About 20%', correct: true },
+            { text: 'About 50%', correct: false }
+          ],
+          feedback: 'This is a significant increase from the current ~1%.'
+        },
+        {
+          text: 'Which action has the smallest digital carbon footprint?',
+          options: [
+            { text: 'Sending a text-only email', correct: true },
+            { text: 'Sending an email with photo attachment', correct: false },
+            { text: 'Streaming a video call', correct: false }
+          ],
+          feedback: 'Text emails use minimal data compared to attachments or video.'
+        },
+        {
+          text: 'What is the best way to reduce your digital footprint when watching videos?',
+          options: [
+            { text: 'Download and watch offline', correct: true },
+            { text: 'Stream in 4K', correct: false },
+            { text: 'Keep videos playing in background', correct: false }
+          ],
+          feedback: 'Downloading once is more efficient than streaming repeatedly.'
+        },
+        {
+          text: 'Which of these uses the most energy over time?',
+          options: [
+            { text: 'Leaving devices on standby', correct: true },
+            { text: 'Occasional web browsing', correct: false },
+            { text: 'Deleting old emails', correct: false }
+          ],
+          feedback: 'Standby power (vampire power) adds up significantly over months.'
         }
       ]
     }
@@ -88,7 +149,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Urban Mining', back: 'The process of recovering raw materials from waste products.' },
         { front: 'Toxins', back: 'Harmful substances like lead and mercury found in electronics.' },
         { front: 'Formal Recycling', back: 'Recycling done in specialized facilities that manage hazardous materials safely.' },
-        { front: 'Life Extension', back: 'The practice of using a device for as long as possible through repair and maintenance.' }
+        { front: 'Life Extension', back: 'The practice of using a device for as long as possible through repair and maintenance.' },
+        { front: 'Rare Earth Elements', back: 'A group of 17 elements critical for modern electronics.' },
+        { front: 'Downcycling', back: 'Recycling that reduces material quality and functionality.' },
+        { front: 'Closed-Loop Recycling', back: 'Recycling that creates new products of equal or better quality.' },
+        { front: 'WEEE Directive', back: 'Waste Electrical and Electronic Equipment - EU law for proper e-waste disposal.' },
+        { front: 'Extended Producer Responsibility', back: 'Policy making manufacturers responsible for end-of-life product disposal.' },
+        { front: 'Device Lifecycle', back: 'The complete journey from manufacturing to disposal or recycling.' },
+        { front: 'Material Recovery', back: 'Extracting valuable materials from discarded electronics.' }
       ]
     },
     challenge: {
@@ -113,6 +181,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'About 80%', correct: false }
           ],
           feedback: 'The majority of e-waste ends up in landfills or is processed unsafely.'
+        },
+        {
+          text: 'How many different elements are in a single smartphone?',
+          options: [
+            { text: 'Over 60', correct: true },
+            { text: 'About 10', correct: false },
+            { text: 'About 5', correct: false }
+          ],
+          feedback: 'Smartphones contain many valuable and rare materials.'
+        },
+        {
+          text: 'What can be recovered from recycling 1 million cell phones?',
+          options: [
+            { text: '35,000 lbs copper, 772 lbs silver', correct: true },
+            { text: '1,000 lbs gold', correct: false },
+            { text: '100,000 lbs plastic', correct: false }
+          ],
+          feedback: 'Urban mining recovers significant precious metals.'
+        },
+        {
+          text: 'Which toxic substance is commonly found in e-waste?',
+          options: [
+            { text: 'Lead', correct: true },
+            { text: 'Salt', correct: false },
+            { text: 'Sugar', correct: false }
+          ],
+          feedback: 'Lead, mercury, and cadmium are common e-waste toxins.'
+        },
+        {
+          text: 'How much can extending device life reduce carbon footprint?',
+          options: [
+            { text: 'Up to 50%', correct: true },
+            { text: 'About 5%', correct: false },
+            { text: 'About 1%', correct: false }
+          ],
+          feedback: 'Using a phone for 4 years vs 2 years cuts footprint significantly.'
+        },
+        {
+          text: 'What is the "Right to Repair" movement about?',
+          options: [
+            { text: 'Making it easier for consumers to fix devices', correct: true },
+            { text: 'Requiring repairs within 24 hours', correct: false },
+            { text: 'Banning all repairs', correct: false }
+          ],
+          feedback: 'It advocates for parts and manuals availability for consumers.'
+        },
+        {
+          text: 'Which is the fastest growing waste stream globally?',
+          options: [
+            { text: 'E-waste', correct: true },
+            { text: 'Plastic waste', correct: false },
+            { text: 'Paper waste', correct: false }
+          ],
+          feedback: 'Electronic waste is the fastest growing waste stream.'
         }
       ]
     }
@@ -146,7 +268,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Parameters', back: 'The variables in an AI model that are learned during training.' },
         { front: 'Green AI', back: 'Research into making AI models more energy-efficient.' },
         { front: 'Inference', back: 'The process of using a trained AI model to make predictions or generate content.' },
-        { front: 'Water Footprint', back: 'The amount of water used to cool the servers running AI models.' }
+        { front: 'Water Footprint', back: 'The amount of water used to cool the servers running AI models.' },
+        { front: 'Training Data', back: 'The dataset used to teach an AI model to recognize patterns.' },
+        { front: 'Transformer Model', back: 'A deep learning architecture that processes sequential data efficiently.' },
+        { front: 'Token', back: 'A unit of text or data that an AI processes individually.' },
+        { front: 'Model Distillation', back: 'Creating smaller, more efficient versions of large AI models.' },
+        { front: 'Energy-Aware Computing', back: 'Designing systems to optimize power consumption.' },
+        { front: 'Carbon-Aware AI', back: 'Running AI tasks during times of lower carbon intensity.' },
+        { front: 'Neural Network', back: 'A computing system inspired by biological neural networks.' }
       ]
     },
     challenge: {
@@ -171,6 +300,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'About 100x', correct: false }
           ],
           feedback: 'Generative AI is significantly more resource-intensive than traditional search.'
+        },
+        {
+          text: 'What is the carbon footprint of training a large AI model compared to a car?',
+          options: [
+            { text: 'Similar to driving 100 miles', correct: false },
+            { text: 'Equivalent to five cars over their lifetimes', correct: true },
+            { text: 'Less than a bicycle', correct: false }
+          ],
+          feedback: 'Training a single large AI model can emit as much carbon as five cars in their lifetimes.'
+        },
+        {
+          text: 'What does "Green AI" aim to do?',
+          options: [
+            { text: 'Make AI models green in color', correct: false },
+            { text: 'Make AI models more energy-efficient', correct: true },
+            { text: 'Replace AI with human decision-making', correct: false }
+          ],
+          feedback: 'Green AI focuses on reducing the energy consumption and carbon emissions of AI systems.'
+        },
+        {
+          text: 'What is "inference" in AI?',
+          options: [
+            { text: 'The process of training an AI model', correct: false },
+            { text: 'Using a trained model to make predictions', correct: true },
+            { text: 'The storage of AI data', correct: false }
+          ],
+          feedback: 'Inference is when a trained AI model is used to generate outputs from new inputs.'
+        },
+        {
+          text: 'Why do AI data centers use a lot of water?',
+          options: [
+            { text: 'For drinking for workers', correct: false },
+            { text: 'For cooling the servers', correct: true },
+            { text: 'To create hydrogen fuel', correct: false }
+          ],
+          feedback: 'Data centers require massive amounts of water to cool the GPUs and servers running AI models.'
+        },
+        {
+          text: 'What is "model distillation"?',
+          options: [
+            { text: 'Distilling water for data centers', correct: false },
+            { text: 'Creating smaller, more efficient versions of large AI models', correct: true },
+            { text: 'Teaching AI about liquids', correct: false }
+          ],
+          feedback: 'Model distillation creates compact versions of large AI models that require less energy to run.'
+        },
+        {
+          text: 'Which task would be most wasteful to use AI for?',
+          options: [
+            { text: 'Complex data analysis', correct: false },
+            { text: 'A simple web search that a search engine could handle', correct: true },
+            { text: 'Language translation', correct: false }
+          ],
+          feedback: 'Using energy-intensive AI for simple tasks that traditional tools can handle wastes significant energy.'
         }
       ]
     }
@@ -204,7 +387,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Modular Design', back: 'A design approach that subdivides a system into smaller parts.' },
         { front: 'Repairability Score', back: 'A rating that indicates how easy a device is to repair.' },
         { front: 'Embodied Carbon', back: 'The CO2 emitted during the manufacture and transport of a product.' },
-        { front: 'Refurbished', back: 'A used product that has been restored to like-new condition.' }
+        { front: 'Refurbished', back: 'A used product that has been restored to like-new condition.' },
+        { front: 'Right to Repair', back: 'The right of consumers to repair their own devices.' },
+        { front: 'Fairphone', back: 'A modular smartphone designed for easy repair and longevity.' },
+        { front: 'Framework', back: 'A laptop designed with fully replaceable and upgradeable modules.' },
+        { front: 'e-Waste Recycling Rate', back: 'The percentage of e-waste that gets properly recycled.' },
+        { front: 'Design for Disassembly', back: 'Creating products that can be easily taken apart for repair.' },
+        { front: 'Spare Parts', back: 'Replacement components available for repairing devices.' },
+        { front: 'Software Support', back: 'Updates and security patches provided for devices over time.' }
       ]
     },
     challenge: {
@@ -215,7 +405,11 @@ export const MISSIONS: Record<string, Mission> = {
         { left: 'Modular Design', right: 'Easy to swap parts' },
         { left: 'Planned Obsolescence', right: 'Designed to break' },
         { left: 'Refurbished', right: 'Used but restored' },
-        { left: 'Embodied Carbon', right: 'Manufacturing emissions' }
+        { left: 'Embodied Carbon', right: 'Manufacturing emissions' },
+        { left: 'Repairability Score', right: 'Measures how easy to fix' },
+        { left: 'Right to Repair', right: 'Consumer right to fix devices' },
+        { left: 'Fairphone', right: 'Modular smartphone brand' },
+        { left: 'Framework', right: 'Repairable laptop brand' }
       ]
     }
   },
@@ -248,7 +442,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Standby Power', back: 'The power consumed by an appliance when it is switched off or in standby mode.' },
         { front: 'Vampire Power', back: 'Another term for standby power, as it "sucks" energy silently.' },
         { front: 'Smart Thermostat', back: 'A device that can learn your habits and optimize heating/cooling to save energy.' },
-        { front: 'Rare Earth Minerals', back: 'A group of 17 chemical elements used in many high-tech devices.' }
+        { front: 'Rare Earth Minerals', back: 'A group of 17 chemical elements used in many high-tech devices.' },
+        { front: 'Smart Hub', back: 'A central device that connects and controls multiple smart home devices.' },
+        { front: 'Zigbee', back: 'A low-power wireless communication protocol for smart home devices.' },
+        { front: 'Z-Wave', back: 'Another wireless protocol designed for home automation.' },
+        { front: 'Energy Monitoring', back: 'Tracking electricity usage of connected devices in real-time.' },
+        { front: 'Home Automation', back: 'Using technology to control home devices automatically.' },
+        { front: 'Sensor Network', back: 'A collection of sensors that monitor environmental conditions.' },
+        { front: 'Edge Device', back: 'Computing hardware that processes data near where it is generated.' }
       ]
     },
     challenge: {
@@ -260,7 +461,10 @@ export const MISSIONS: Record<string, Mission> = {
         { id: 'fridge', name: 'Smart Fridge', type: 'high', icon: '🧊' },
         { id: 'watch', name: 'Smart Watch', type: 'low', icon: '⌚' },
         { id: 'ac', name: 'Smart AC', type: 'high', icon: '❄️' },
-        { id: 'sensor', name: 'Motion Sensor', type: 'low', icon: '📡' }
+        { id: 'sensor', name: 'Motion Sensor', type: 'low', icon: '📡' },
+        { id: 'heater', name: 'Smart Heater', type: 'high', icon: '🔥' },
+        { id: 'plug', name: 'Smart Plug', type: 'low', icon: '🔌' },
+        { id: 'washer', name: 'Smart Washer', type: 'high', icon: '🧺' }
       ],
       bins: [
         { id: 'low', name: 'Low Impact', color: 'border-green-500 bg-green-500/20', accept: ['low'] },
@@ -297,7 +501,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'WebP', back: 'A modern image format that provides superior lossless and lossy compression.' },
         { front: 'Minification', back: 'The process of removing unnecessary characters from code without changing its functionality.' },
         { front: 'Green Hosting', back: 'Web hosting powered by renewable energy sources.' },
-        { front: 'OLED', back: 'Organic Light Emitting Diode - a display technology where each pixel produces its own light.' }
+        { front: 'OLED', back: 'Organic Light Emitting Diode - a display technology where each pixel produces its own light.' },
+        { front: 'CDN', back: 'Content Delivery Network - servers distributed globally to deliver content faster.' },
+        { front: 'Caching', back: 'Storing copies of files temporarily to reduce load times and server usage.' },
+        { front: 'HTTP Request', back: 'A message sent from a client to a server to request content.' },
+        { front: 'Responsive Design', back: 'Creating websites that adapt to different screen sizes efficiently.' },
+        { front: 'AMP', back: 'Accelerated Mobile Pages - lightweight web pages for fast loading.' },
+        { front: 'Core Web Vitals', back: 'Google metrics measuring user experience on websites.' },
+        { front: 'Progressive Web App', back: 'Web applications that function like native mobile apps.' }
       ]
     },
     challenge: {
@@ -322,6 +533,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'BMP', correct: false }
           ],
           feedback: 'WebP offers better compression than older formats like PNG or JPEG.'
+        },
+        {
+          text: 'What is "minification" in web development?',
+          options: [
+            { text: 'Making text smaller on the page', correct: false },
+            { text: 'Removing unnecessary characters from code', correct: true },
+            { text: 'Compressing images', correct: false }
+          ],
+          feedback: 'Minification removes whitespace and comments from code to reduce file size.'
+        },
+        {
+          text: 'Why does dark mode save energy on OLED screens?',
+          options: [
+            { text: 'It uses less battery', correct: false },
+            { text: 'Black pixels are "off" and produce no light', correct: true },
+            { text: 'It requires less processing power', correct: false }
+          ],
+          feedback: 'OLED displays have self-illuminating pixels, so black pixels use zero energy.'
+        },
+        {
+          text: 'What is "green hosting"?',
+          options: [
+            { text: 'Web hosting with green color scheme', correct: false },
+            { text: 'Web hosting powered by renewable energy', correct: true },
+            { text: 'Free web hosting', correct: false }
+          ],
+          feedback: 'Green hosting providers power their data centers with renewable energy sources.'
+        },
+        {
+          text: 'What is a "weight budget" in web design?',
+          options: [
+            { text: 'A diet plan for website owners', correct: false },
+            { text: 'A limit on the total data size of a webpage', correct: true },
+            { text: 'The cost of hosting a website', correct: false }
+          ],
+          feedback: 'A weight budget helps keep websites fast and eco-friendly by limiting data transfer.'
+        },
+        {
+          text: 'What does a CDN (Content Delivery Network) do?',
+          options: [
+            { text: 'Creates website content automatically', correct: false },
+            { text: 'Delivers content from servers close to the user', correct: true },
+            { text: 'Deletes old website files', correct: false }
+          ],
+          feedback: 'CDNs reduce latency and energy by serving content from geographically nearby servers.'
+        },
+        {
+          text: 'Why are static site generators more efficient than dynamic CMS?',
+          options: [
+            { text: 'They use more servers', correct: false },
+            { text: 'They pre-build pages and serve them directly', correct: true },
+            { text: 'They require more database queries', correct: false }
+          ],
+          feedback: 'Static sites skip database queries and server-side processing, reducing energy use.'
         }
       ]
     }
@@ -355,7 +620,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Free Cooling', back: 'Using outside air or water to cool a data center instead of mechanical refrigeration.' },
         { front: 'Hyperscale', back: 'An architecture that can scale significantly to meet massive demand.' },
         { front: 'Edge Computing', back: 'Processing data near the source of the data rather than in a central cloud.' },
-        { front: 'Heat Re-use', back: 'Capturing waste heat from servers to use for other purposes.' }
+        { front: 'Heat Re-use', back: 'Capturing waste heat from servers to use for other purposes.' },
+        { front: 'Rack Density', back: 'The amount of power consumed by equipment in a single server rack.' },
+        { front: 'Server Virtualization', back: 'Running multiple virtual servers on a single physical server.' },
+        { front: 'Container Technology', back: 'Lightweight packaging of software with its dependencies.' },
+        { front: 'Kubernetes', back: 'An open-source system for automating container deployment and scaling.' },
+        { front: 'Airside Economizer', back: 'Using outside air directly for cooling when conditions are suitable.' },
+        { front: 'Evaporative Cooling', back: 'Using water evaporation to cool air in data centers.' },
+        { front: 'Liquid Cooling', back: 'Using liquid to absorb and transfer heat from servers.' }
       ]
     },
     challenge: {
@@ -366,7 +638,11 @@ export const MISSIONS: Record<string, Mission> = {
         { left: 'PUE', right: 'Efficiency Metric' },
         { left: 'Free Cooling', right: 'Using outside air' },
         { left: 'Hyperscale', right: 'Massive scale' },
-        { left: 'Edge Computing', right: 'Local processing' }
+        { left: 'Edge Computing', right: 'Local processing' },
+        { left: 'Heat Re-use', right: 'Capturing waste heat' },
+        { left: 'Server Virtualization', right: 'Multiple VMs on one server' },
+        { left: 'Liquid Cooling', right: 'Using liquid to absorb heat' },
+        { left: 'Airside Economizer', right: 'Direct outside air cooling' }
       ]
     }
   },
@@ -399,7 +675,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Intentionality', back: 'Using tech for a specific purpose rather than mindless scrolling.' },
         { front: 'Digital Declutter', back: 'Regularly deleting unused apps, photos, and emails.' },
         { front: 'Attention Economy', back: 'Business models that treat human attention as a scarce commodity.' },
-        { front: 'Digital Sabbath', back: 'A designated period of time spent away from all digital devices.' }
+        { front: 'Digital Sabbath', back: 'A designated period of time spent away from all digital devices.' },
+        { front: 'Screen Time', back: 'The amount of time spent using a device with a screen.' },
+        { front: 'Notification Fatigue', back: 'Overwhelm from excessive digital alerts and messages.' },
+        { front: 'FOMO', back: 'Fear Of Missing Out - anxiety from seeing others\' online activities.' },
+        { front: 'Do Not Disturb', back: 'A mode that silences notifications for focused time.' },
+        { front: 'Digital Detox', back: 'A period of deliberately avoiding digital devices.' },
+        { front: 'Mindful Usage', back: 'Being aware and intentional about technology use.' },
+        { front: 'Zero-Base Inbox', back: 'Starting each day with an empty email inbox.' }
       ]
     },
     challenge: {
@@ -424,6 +707,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'It saves paper.', correct: false }
           ],
           feedback: 'Every byte of data in the cloud requires energy to maintain.'
+        },
+        {
+          text: 'What is "data hoarding" in the cloud?',
+          options: [
+            { text: 'Buying more cloud storage', correct: false },
+            { text: 'Storing unnecessary files indefinitely', correct: true },
+            { text: 'Deleting old files', correct: false }
+          ],
+          feedback: 'Data hoarding means keeping files you dont need, which wastes server energy.'
+        },
+        {
+          text: 'What is the "attention economy"?',
+          options: [
+            { text: 'Trading stocks on screens', correct: false },
+            { text: 'Business models that keep you online as long as possible', correct: true },
+            { text: 'Counting screen time hours', correct: false }
+          ],
+          feedback: 'The attention economy treats human attention as a commodity to be monetized.'
+        },
+        {
+          text: 'What is a "digital declutter"?',
+          options: [
+            { text: 'Cleaning your computer screen', correct: false },
+            { text: 'Reviewing and removing unused apps, photos, and emails', correct: true },
+            { text: 'Buying new digital devices', correct: false }
+          ],
+          feedback: 'Digital declutter involves intentionally removing digital clutter from your life.'
+        },
+        {
+          text: 'How does unsubscribing from junk mail help the environment?',
+          options: [
+            { text: 'It saves paper', correct: false },
+            { text: 'It reduces the load on email servers', correct: true },
+            { text: 'It makes your inbox look cleaner', correct: false }
+          ],
+          feedback: 'Every email requires server processing; reducing junk reduces unnecessary energy use.'
+        },
+        {
+          text: 'What is a "digital sabbath"?',
+          options: [
+            { text: 'A day without screens', correct: true },
+            { text: 'A religious holiday online', correct: false },
+            { text: 'A backup of your files', correct: false }
+          ],
+          feedback: 'A digital sabbath is a regular period of intentionally disconnecting from digital devices.'
+        },
+        {
+          text: 'Which is the best approach to reduce your digital footprint?',
+          options: [
+            { text: 'Buy the latest devices every year', correct: false },
+            { text: 'Use intentionality and focus on what truly matters', correct: true },
+            { text: 'Stay online 24/7 to get things done faster', correct: false }
+          ],
+          feedback: 'Intentional technology use leads to both smaller footprint and less stress.'
         }
       ]
     }
@@ -457,7 +794,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Circular Economy', back: 'A model focused on eliminating waste and the continual use of resources.' },
         { front: 'The 5 Rs', back: 'Refuse, Reduce, Reuse, Repurpose, Recycle - in order of priority.' },
         { front: 'Refurbished', back: 'A used product that has been restored to a functional condition.' },
-        { front: 'Design for Disassembly', back: 'Designing products so they can be easily taken apart for repair or recycling.' }
+        { front: 'Design for Disassembly', back: 'Designing products so they can be easily taken apart for repair or recycling.' },
+        { front: 'Upcycling', back: 'Transforming waste materials into better quality products.' },
+        { front: 'Cradle to Cradle', back: 'A design principle where products are fully recyclable or biodegradable.' },
+        { front: 'Product-as-a-Service', back: 'A model where customers pay for access rather than ownership.' },
+        { front: 'Sharing Economy', back: 'A model where resources are shared among multiple users.' },
+        { front: 'Take-Back Program', back: 'Manufacturers accepting old products for recycling.' },
+        { front: 'Material Passport', back: 'A digital record of materials in a product for recycling.' },
+        { front: 'Biomimicry', back: 'Designing products inspired by natural processes and systems.' }
       ]
     },
     challenge: {
@@ -469,7 +813,10 @@ export const MISSIONS: Record<string, Mission> = {
         { id: 'reuse', name: 'Use a glass bottle', type: 'reuse', icon: '🥛' },
         { id: 'recycle', name: 'Melt down glass', type: 'recycle', icon: '♻️' },
         { id: 'repair', name: 'Fix a broken screen', type: 'repair', icon: '🛠️' },
-        { id: 'reduce', name: 'Buy fewer gadgets', type: 'reduce', icon: '📉' }
+        { id: 'reduce', name: 'Buy fewer gadgets', type: 'reduce', icon: '📉' },
+        { id: 'repurpose', name: 'Turn old t-shirt into bag', type: 'reuse', icon: '👜' },
+        { id: 'refuse2', name: 'Decline free promotional items', type: 'refuse', icon: '❌' },
+        { id: 'reduce2', name: 'Choose products with less packaging', type: 'reduce', icon: '📦' }
       ],
       bins: [
         { id: 'refuse', name: 'Refuse/Reduce', color: 'border-red-500 bg-red-500/20', accept: ['refuse', 'reduce'] },
@@ -507,7 +854,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Carbon-Awareness', back: 'Building software that does more when the grid is powered by renewables.' },
         { front: 'Algorithmic Efficiency', back: 'The property of an algorithm which relates to the amount of resources used.' },
         { front: 'Green Software', back: 'Software that is responsible for emitting the least amount of greenhouse gases possible.' },
-        { front: 'Network Efficiency', back: 'Reducing the amount of data sent over the internet to save energy.' }
+        { front: 'Network Efficiency', back: 'Reducing the amount of data sent over the internet to save energy.' },
+        { front: 'Code Optimization', back: 'Improving code to execute faster with fewer resources.' },
+        { front: 'Server-Side Rendering', back: 'Generating web pages on the server to reduce client processing.' },
+        { front: 'Static Site Generation', back: 'Building websites as static files for faster, more efficient loading.' },
+        { front: 'Database Query Optimization', back: 'Writing efficient database queries to reduce server load.' },
+        { front: 'API Efficiency', back: 'Designing APIs to minimize data transfer and processing.' },
+        { front: 'Caching Strategy', back: 'Storing frequently accessed data to reduce repeated computations.' },
+        { front: 'Load Balancing', back: 'Distributing workloads across multiple servers for efficiency.' }
       ]
     },
     challenge: {
@@ -541,6 +895,51 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'The W3C', correct: false }
           ],
           feedback: 'The Green Software Foundation is dedicated to building a sustainable future for software.'
+        },
+        {
+          text: 'What is "algorithmic efficiency"?',
+          options: [
+            { text: 'Writing code quickly', correct: false },
+            { text: 'The amount of resources an algorithm uses', correct: true },
+            { text: 'Making algorithms look good', correct: false }
+          ],
+          feedback: 'Algorithmic efficiency refers to how much computing resources an algorithm requires.'
+        },
+        {
+          text: 'What is "carbon intensity"?',
+          options: [
+            { text: 'How dark a website is', correct: false },
+            { text: 'The amount of carbon per kilowatt-hour of electricity', correct: true },
+            { text: 'The weight of code', correct: false }
+          ],
+          feedback: 'Carbon intensity measures how much carbon is emitted for each unit of electricity consumed.'
+        },
+        {
+          text: 'Why does optimizing database queries help the environment?',
+          options: [
+            { text: 'It makes databases prettier', correct: false },
+            { text: 'It reduces server load and power draw', correct: true },
+            { text: 'It uses less water', correct: false }
+          ],
+          feedback: 'Efficient queries require less computation, which means less energy consumed by servers.'
+        },
+        {
+          text: 'What is a "caching strategy"?',
+          options: [
+            { text: 'Hiding code from users', correct: false },
+            { text: 'Storing frequently accessed data to reduce repeated computations', correct: true },
+            { text: 'Deleting old code', correct: false }
+          ],
+          feedback: 'Caching stores data temporarily so it does not need to be recalculated or fetched repeatedly.'
+        },
+        {
+          text: 'What is "network efficiency" in green coding?',
+          options: [
+            { text: 'Using faster internet connections', correct: false },
+            { text: 'Reducing the amount of data sent over the internet to save energy', correct: true },
+            { text: 'Writing code at a network hub', correct: false }
+          ],
+          feedback: 'Network efficiency means minimizing data transfer to reduce energy use in routers and cables.'
         }
       ]
     }
@@ -574,7 +973,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'GPU Power Draw', back: 'The amount of electricity consumed by a graphics card.' },
         { front: 'Bandwidth', back: 'The maximum rate of data transfer across a given path.' },
         { front: 'Standby Mode', back: 'A low-power state for electronic devices.' },
-        { front: 'Digital Distribution', back: 'Downloading games instead of buying physical discs.' }
+        { front: 'Digital Distribution', back: 'Downloading games instead of buying physical discs.' },
+        { front: 'Ray Tracing', back: 'A rendering technique simulating realistic light behavior.' },
+        { front: 'Frame Rate', back: 'The number of frames displayed per second in gaming.' },
+        { front: 'VRAM', back: 'Video Random Access Memory - dedicated memory for graphics processing.' },
+        { front: 'TDP', back: 'Thermal Design Power - the maximum amount of heat generated by a chip.' },
+        { front: 'Local Gaming', back: 'Running games directly on personal hardware.' },
+        { front: 'Game Streaming', back: 'Broadcasting gameplay over the internet to viewers.' },
+        { front: 'Energy Save Mode', back: 'Console settings that reduce power consumption.' }
       ]
     },
     challenge: {
@@ -599,6 +1005,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'The sound of the fan.', correct: false }
           ],
           feedback: 'Maintaining a high-speed video stream requires significant network infrastructure energy.'
+        },
+        {
+          text: 'How much power can a high-end gaming GPU draw?',
+          options: [
+            { text: 'About 50 watts', correct: false },
+            { text: 'Over 400 watts', correct: true },
+            { text: 'About 10 watts', correct: false }
+          ],
+          feedback: 'High-end GPUs can draw over 400 watts, significantly impacting electricity usage.'
+        },
+        {
+          text: 'Which gaming approach has the largest manufacturing footprint?',
+          options: [
+            { text: 'Playing on a phone', correct: false },
+            { text: 'Buying a new gaming PC or console', correct: true },
+            { text: 'Using cloud gaming', correct: false }
+          ],
+          feedback: 'Manufacturing gaming hardware has a large carbon footprint due to rare earth minerals and production processes.'
+        },
+        {
+          text: 'What is the most eco-friendly game type to play?',
+          options: [
+            { text: 'Graphically intense AAA games', correct: false },
+            { text: 'Indie games or less graphically intense titles', correct: true },
+            { text: 'VR games', correct: false }
+          ],
+          feedback: 'Less graphically intense games require less processing power and thus less energy.'
+        },
+        {
+          text: 'What should you do with your console to save energy?',
+          options: [
+            { text: 'Keep it in rest mode always', correct: false },
+            { text: 'Use energy-saving modes and fully shut down when not in use', correct: true },
+            { text: 'Unplug the TV instead', correct: false }
+          ],
+          feedback: 'Energy-saving modes reduce standby power consumption significantly.'
+        },
+        {
+          text: 'Why is digital distribution generally better than physical discs?',
+          options: [
+            { text: 'Physical discs are free', correct: false },
+            { text: 'It eliminates manufacturing and shipping emissions', correct: true },
+            { text: 'Digital games are always better', correct: false }
+          ],
+          feedback: 'Digital distribution eliminates the manufacturing and transportation of physical media.'
+        },
+        {
+          text: 'What is "TDP" in gaming hardware?',
+          options: [
+            { text: 'Time Display Protocol', correct: false },
+            { text: 'Thermal Design Power - maximum heat generated', correct: true },
+            { text: 'Texture Display Processor', correct: false }
+          ],
+          feedback: 'TDP indicates the maximum amount of heat a chip will generate, relating to energy efficiency.'
         }
       ]
     }
@@ -632,7 +1092,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Proof of Stake', back: 'A consensus mechanism that is much more energy-efficient than PoW.' },
         { front: 'Mining', back: 'The process of validating transactions and adding them to a PoW blockchain.' },
         { front: 'ASIC', back: 'Application-Specific Integrated Circuit - hardware designed for a single task like mining.' },
-        { front: 'Decentralization', back: 'The transfer of control from a central entity to a distributed network.' }
+        { front: 'Decentralization', back: 'The transfer of control from a central entity to a distributed network.' },
+        { front: 'Blockchain', back: 'A distributed ledger that records transactions across many computers.' },
+        { front: 'Wallet', back: 'A software application that stores cryptographic keys for cryptocurrency transactions.' },
+        { front: 'Smart Contract', back: 'Self-executing contracts with terms directly written into code.' },
+        { front: 'NFT', back: 'Non-Fungible Token - a unique digital asset representing ownership of items.' },
+        { front: 'Token', back: 'A digital asset representing a utility or value on a blockchain.' },
+        { front: 'Gas Fee', back: 'The transaction fee required to execute operations on a blockchain.' },
+        { front: 'The Merge', back: 'Ethereum\'s transition from Proof of Work to Proof of Stake.' }
       ]
     },
     challenge: {
@@ -657,6 +1124,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'Over 99%', correct: true }
           ],
           feedback: 'The transition to Proof of Stake was a massive win for digital sustainability.'
+        },
+        {
+          text: 'What is "mining" in blockchain?',
+          options: [
+            { text: 'Digging for cryptocurrency underground', correct: false },
+            { text: 'Validating transactions using powerful computers', correct: true },
+            { text: 'Creating new coins in a factory', correct: false }
+          ],
+          feedback: 'Mining uses computational power to validate transactions and secure the network.'
+        },
+        {
+          text: 'What is an "ASIC" in cryptocurrency?',
+          options: [
+            { text: 'A type of cryptocurrency', correct: false },
+            { text: 'Specialized hardware designed for mining', correct: true },
+            { text: 'A software program', correct: false }
+          ],
+          feedback: 'ASICs are Application-Specific Integrated Circuits built for specific tasks like mining.'
+        },
+        {
+          text: 'What problem does e-waste from mining create?',
+          options: [
+            { text: 'Too much paper waste', correct: false },
+            { text: 'Specialized mining hardware becomes obsolete', correct: true },
+            { text: 'Water pollution', correct: false }
+          ],
+          feedback: 'ASIC mining hardware becomes obsolete quickly, creating significant electronic waste.'
+        },
+        {
+          text: 'How does blockchain help track carbon credits?',
+          options: [
+            { text: 'By creating fake credits', correct: false },
+            { text: 'Through transparent, immutable record-keeping', correct: true },
+            { text: 'By using more energy', correct: false }
+          ],
+          feedback: 'Blockchain can provide transparent tracking of carbon credits to prevent fraud.'
+        },
+        {
+          text: 'What is an "NFT"?',
+          options: [
+            { text: 'Non-Fungible Token - a unique digital asset', correct: true },
+            { text: 'A type of cryptocurrency', correct: false },
+            { text: 'A bank account number', correct: false }
+          ],
+          feedback: 'NFTs are unique digital assets that can represent ownership of items.'
+        },
+        {
+          text: 'What are "gas fees" on a blockchain?',
+          options: [
+            { text: 'Fees to fill up a car with fuel', correct: false },
+            { text: 'Transaction fees required to execute operations', correct: true },
+            { text: 'Monthly subscription costs', correct: false }
+          ],
+          feedback: 'Gas fees are the transaction costs required to execute smart contracts on a blockchain.'
         }
       ]
     }
@@ -690,7 +1211,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'PPA', back: 'Power Purchase Agreement - a contract to buy electricity directly from a generator.' },
         { front: 'Intermittency', back: 'The characteristic of energy sources that are not available at all times.' },
         { front: 'Baseload', back: 'The minimum amount of electric power delivered to a grid at any time.' },
-        { front: 'Geothermal', back: 'Energy derived from the heat of the earth.' }
+        { front: 'Geothermal', back: 'Energy derived from the heat of the earth.' },
+        { front: 'Solar Farm', back: 'A large installation of solar panels to generate electricity.' },
+        { front: 'Wind Farm', back: 'A collection of wind turbines generating renewable electricity.' },
+        { front: 'Grid', back: 'The network of power lines delivering electricity to users.' },
+        { front: 'Carbon Neutral', back: 'Balancing carbon emissions with carbon removal or offsets.' },
+        { front: 'Energy Storage', back: 'Technology like batteries that store energy for later use.' },
+        { front: 'Smart Grid', back: 'An electricity network using digital technology for efficiency.' },
+        { front: 'Virtual Power Plant', back: 'A network of distributed energy resources managed together.' }
       ]
     },
     challenge: {
@@ -715,6 +1243,60 @@ export const MISSIONS: Record<string, Mission> = {
             { text: 'They use too much water.', correct: false }
           ],
           feedback: 'Matching 24/7 data center demand with intermittent renewables is a major engineering challenge.'
+        },
+        {
+          text: 'What does "PUE" stand for in data centers?',
+          options: [
+            { text: 'Power Usage Effectiveness', correct: true },
+            { text: 'Public Utility Extension', correct: false },
+            { text: 'Personal User Equipment', correct: false }
+          ],
+          feedback: 'PUE measures how efficiently a data center uses power, with lower being better.'
+        },
+        {
+          text: 'What is "intermittency" in renewable energy?',
+          options: [
+            { text: 'The consistent power supply', correct: false },
+            { text: 'Energy sources not available at all times', correct: true },
+            { text: 'A type of solar panel', correct: false }
+          ],
+          feedback: 'Intermittency means solar and wind do not produce power continuously.'
+        },
+        {
+          text: 'What is "baseload" in energy?',
+          options: [
+            { text: 'Power used at the bottom of a hill', correct: false },
+            { text: 'The minimum power delivered at any time', correct: true },
+            { text: 'The cheapest form of energy', correct: false }
+          ],
+          feedback: 'Baseload is the minimum amount of power needed to keep the grid running at all times.'
+        },
+        {
+          text: 'Why are tech companies building data centers near geothermal sources?',
+          options: [
+            { text: 'For tourism', correct: false },
+            { text: 'To get 24/7 clean power from earth heat', correct: true },
+            { text: 'To cool the servers', correct: false }
+          ],
+          feedback: 'Geothermal energy provides consistent, carbon-free power regardless of weather.'
+        },
+        {
+          text: 'What is "energy storage" in renewable systems?',
+          options: [
+            { text: 'Storing electricity for later use', correct: true },
+            { text: 'Saving money on energy bills', correct: false },
+            { text: 'A type of power plant', correct: false }
+          ],
+          feedback: 'Batteries and other storage technologies store excess renewable energy for when it is needed.'
+        },
+        {
+          text: 'Why is nuclear energy being considered for data centers?',
+          options: [
+            { text: 'It is the cheapest option', correct: false },
+            { text: 'It provides carbon-free baseload power', correct: true },
+            { text: 'It uses solar panels', correct: false }
+          ],
+          feedback: 'Nuclear provides consistent, low-carbon power that can run 24/7 without weather dependence.'
         }
       ]
     }
@@ -748,7 +1330,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: 'Screen Reader', back: 'Software that reads digital text aloud for visually impaired users.' },
         { front: 'Contrast Ratio', back: 'The difference in brightness between text and its background.' },
         { front: 'Keyboard Nav', back: 'The ability to use a website using only a keyboard.' },
-        { front: 'A11y', back: 'A common abbreviation for "Accessibility" (11 letters between A and Y).' }
+        { front: 'A11y', back: 'A common abbreviation for "Accessibility" (11 letters between A and Y).' },
+        { front: 'ARIA', back: 'Accessible Rich Internet Applications - a set of attributes for accessibility.' },
+        { front: 'Caption', back: 'Text displayed on screen describing audio content.' },
+        { front: 'Transcript', back: 'A text version of audio or video content.' },
+        { front: 'Focus Ring', back: 'A visual indicator showing which element is keyboard-focused.' },
+        { front: 'Skip Link', back: 'A navigation link allowing users to bypass repeated content.' },
+        { front: 'Semantic HTML', back: 'Using HTML elements that convey meaning about structure.' },
+        { front: 'Color Blindness', back: 'A condition affecting the ability to perceive certain colors.' }
       ]
     },
     challenge: {
@@ -759,7 +1348,11 @@ export const MISSIONS: Record<string, Mission> = {
         { left: 'Alt Text', right: 'Describes images' },
         { left: 'Captions', right: 'For audio content' },
         { left: 'High Contrast', right: 'Improves readability' },
-        { left: 'Keyboard Nav', right: 'For mouse-free use' }
+        { left: 'Keyboard Nav', right: 'For mouse-free use' },
+        { left: 'Screen Reader', right: 'Reads text aloud' },
+        { left: 'Skip Link', right: 'Bypasses repeated content' },
+        { left: 'Semantic HTML', right: 'Conveys structure meaning' },
+        { left: 'Focus Ring', right: 'Shows keyboard selection' }
       ]
     }
   },
@@ -792,7 +1385,14 @@ export const MISSIONS: Record<string, Mission> = {
         { front: '2FA', back: 'Two-Factor Authentication - requiring two forms of ID to log in.' },
         { front: 'Phishing', back: 'Fraudulent emails or sites designed to steal your data.' },
         { front: 'Password Manager', back: 'A tool that generates and stores strong, unique passwords.' },
-        { front: 'Data Sovereignty', back: 'The right of an individual to control their own personal data.' }
+        { front: 'Data Sovereignty', back: 'The right of an individual to control their own personal data.' },
+        { front: 'VPN', back: 'Virtual Private Network - encrypts internet connection for privacy.' },
+        { front: 'Firewall', back: 'A network security system monitoring incoming and outgoing traffic.' },
+        { front: 'Malware', back: 'Malicious software designed to damage or gain unauthorized access.' },
+        { front: 'Data Breach', back: 'An incident where confidential data is exposed unauthorizedly.' },
+        { front: 'End-to-End Encryption', back: 'Encryption that only allows sender and recipient to read messages.' },
+        { front: 'Privacy Policy', back: 'A document explaining how a company collects and uses data.' },
+        { front: 'Cookie', back: 'Small data stored on a device to track browsing activity.' }
       ]
     },
     challenge: {
@@ -804,7 +1404,10 @@ export const MISSIONS: Record<string, Mission> = {
         { id: 'reuse', name: 'Reusing Passwords', type: 'risky', icon: '🔄' },
         { id: 'manager', name: 'Password Manager', type: 'safe', icon: '🗄️' },
         { id: 'public', name: 'Public Wi-Fi for Banking', type: 'risky', icon: '📶' },
-        { id: 'update', name: 'Updating Software', type: 'safe', icon: '🆙' }
+        { id: 'update', name: 'Updating Software', type: 'safe', icon: '🆙' },
+        { id: 'vpn', name: 'Using a VPN', type: 'safe', icon: '🛡️' },
+        { id: 'phishing', name: 'Clicking Unknown Links', type: 'risky', icon: '🎣' },
+        { id: 'encryption', name: 'End-to-End Encryption', type: 'safe', icon: '🔒' }
       ],
       bins: [
         { id: 'safe', name: 'Safe Habits', color: 'border-green-500 bg-green-500/20', accept: ['safe'] },
