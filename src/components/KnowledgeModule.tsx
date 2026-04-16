@@ -24,33 +24,33 @@ const KnowledgeModule = React.memo(({ mission, onComplete }: KnowledgeModuleProp
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-2xl text-green-600 dark:text-green-400">
-          <Icon name={mission.icon} size={24} />
+      <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div className="p-2 sm:p-3 bg-slate-100 dark:bg-slate-800 rounded-xl sm:rounded-2xl text-green-600 dark:text-green-400">
+          <Icon name={mission.icon} size={20} className="sm:w-6 sm:h-6" />
         </div>
-        <h3 className="text-2xl font-bold dark:text-white text-slate-900">{mission.knowledge.title}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-slate-900">{mission.knowledge.title}</h3>
       </div>
 
-      <div className="flex-1 flex flex-col justify-center min-h-[300px]">
+      <div className="flex-1 flex flex-col justify-center min-h-[200px] sm:min-h-[300px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="text-xl sm:text-2xl leading-relaxed dark:text-slate-200 text-slate-700"
+            className="text-base sm:text-xl lg:text-2xl leading-relaxed dark:text-slate-200 text-slate-700"
           >
             {renderRichText(pages[currentPage].text)}
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="mt-12 space-y-6">
+      <div className="mt-8 sm:mt-12 space-y-4 sm:space-y-6">
         <div className="flex justify-center gap-2">
           {pages.map((_, i) => (
             <div 
               key={i} 
-              className={`h-1.5 rounded-full transition-all ${i === currentPage ? 'w-8 bg-green-500' : 'w-2 bg-slate-200 dark:bg-slate-800'}`} 
+              className={`h-1.5 rounded-full transition-all ${i === currentPage ? 'w-6 sm:w-8 bg-green-500' : 'w-1.5 sm:w-2 bg-slate-200 dark:bg-slate-800'}`} 
             />
           ))}
         </div>
@@ -59,17 +59,17 @@ const KnowledgeModule = React.memo(({ mission, onComplete }: KnowledgeModuleProp
           <button
             onClick={() => setCurrentPage(p => p - 1)}
             disabled={currentPage === 0}
-            className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white disabled:opacity-0 transition-all"
+            className="flex items-center gap-1 sm:gap-2 text-sm sm:text-base text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white disabled:opacity-0 transition-all"
           >
-            <ChevronLeft size={20} /> Previous
+            <ChevronLeft size={18} className="sm:w-5 sm:h-5" /> <span className="hidden sm:inline">Previous</span>
           </button>
           
           <button
             onClick={handleNext}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-2xl text-lg transition-all flex items-center gap-2"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 rounded-xl sm:rounded-2xl text-base sm:text-lg transition-all flex items-center gap-2"
           >
             {currentPage === pages.length - 1 ? 'Finish Briefing' : 'Next'}
-            {currentPage !== pages.length - 1 && <ChevronRight size={20} />}
+            {currentPage !== pages.length - 1 && <ChevronRight size={18} className="sm:w-5 sm:h-5" />}
           </button>
         </div>
       </div>

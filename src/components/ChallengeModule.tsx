@@ -31,11 +31,11 @@ const ChallengeModule = React.memo(({ mission, onComplete }: ChallengeModuleProp
 
   return (
     <div className="h-full flex flex-col">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-2xl text-blue-600 dark:text-blue-400">
-          <Icon name="Trophy" size={24} />
+      <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div className="p-2 sm:p-3 bg-slate-100 dark:bg-slate-800 rounded-xl sm:rounded-2xl text-blue-600 dark:text-blue-400">
+          <Icon name="Trophy" size={20} className="sm:w-6 sm:h-6" />
         </div>
-        <h3 className="text-2xl font-bold dark:text-white text-slate-900">{challenge.title}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-slate-900">{challenge.title}</h3>
       </div>
       {renderChallenge()}
     </div>
@@ -72,12 +72,12 @@ function Quiz({ challenge, onComplete }: { challenge: QuizChallenge, onComplete:
   if (isFinished) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
-          <CheckCircle2 size={48} className="text-green-500" />
+        <div className="w-16 sm:w-24 h-16 sm:h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+          <CheckCircle2 size={32} className="sm:w-12 sm:h-12 text-green-500" />
         </div>
-        <h4 className="text-3xl font-bold mb-4 dark:text-white text-slate-900">Challenge Complete!</h4>
-        <p className="text-slate-500 dark:text-slate-400 text-lg mb-10">You've successfully navigated the digital landscape.</p>
-        <button onClick={onComplete} className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-2xl text-xl transition-all">
+        <h4 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 dark:text-white text-slate-900">Challenge Complete!</h4>
+        <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-10">You've successfully navigated the digital landscape.</p>
+        <button onClick={onComplete} className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-8 sm:px-12 rounded-xl sm:rounded-2xl text-base sm:text-xl transition-all">
           Claim Badge
         </button>
       </div>
@@ -86,12 +86,12 @@ function Quiz({ challenge, onComplete }: { challenge: QuizChallenge, onComplete:
 
   return (
     <div className="flex-1 flex flex-col">
-      <p className="text-lg text-slate-500 dark:text-slate-400 mb-8">{challenge.intro}</p>
+      <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">{challenge.intro}</p>
       
-      <div className="space-y-8">
-        <h4 className="text-2xl font-bold dark:text-white text-slate-900">{currentQuestion.text}</h4>
+      <div className="space-y-4 sm:space-y-8">
+        <h4 className="text-lg sm:text-2xl font-bold dark:text-white text-slate-900">{currentQuestion.text}</h4>
         
-        <div className="grid gap-4">
+        <div className="grid gap-3 sm:gap-4">
           {currentQuestion.options.map((opt, i) => {
             const isSelected = selectedOption === i;
             const isCorrect = opt.correct;
@@ -108,7 +108,7 @@ function Quiz({ challenge, onComplete }: { challenge: QuizChallenge, onComplete:
                 key={i}
                 disabled={showFeedback}
                 onClick={() => handleAnswer(i)}
-                className={`p-6 rounded-2xl border-2 text-left text-lg font-semibold transition-all ${statusClass}`}
+                className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 text-left text-base sm:text-lg font-semibold transition-all ${statusClass}`}
               >
                 {opt.text}
               </button>
@@ -121,12 +121,12 @@ function Quiz({ challenge, onComplete }: { challenge: QuizChallenge, onComplete:
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700"
+              className="p-4 sm:p-6 bg-slate-50 dark:bg-slate-800/50 rounded-xl sm:rounded-2xl border border-slate-200 dark:border-slate-700"
             >
-              <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">{currentQuestion.feedback}</p>
+              <p className="text-sm sm:text-lg text-slate-700 dark:text-slate-300 mb-4 sm:mb-6">{currentQuestion.feedback}</p>
               <button 
                 onClick={handleNext}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl text-lg transition-all"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-4 rounded-xl sm:rounded-2xl text-base sm:text-lg transition-all"
               >
                 {currentIndex === challenge.questions.length - 1 ? 'Finish Challenge' : 'Next Question'}
               </button>
@@ -169,32 +169,14 @@ function Matching({ challenge, onComplete }: { challenge: MatchingChallenge, onC
   if (completed) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
-          <CheckCircle2 size={48} className="text-green-500" />
+        <div className="w-16 sm:w-24 h-16 sm:h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+          <CheckCircle2 size={32} className="sm:w-12 sm:h-12 text-green-500" />
         </div>
-        <h4 className="text-3xl font-bold mb-4 dark:text-white text-slate-900">Mission Complete!</h4>
-        <p className="text-slate-500 dark:text-slate-400 text-lg mb-10">All pairs matched correctly.</p>
+        <h4 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 dark:text-white text-slate-900">Mission Complete!</h4>
+        <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-10">All pairs matched correctly.</p>
         <button
           onClick={onComplete}
-          className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-2xl text-xl transition-all"
-        >
-          Claim Reward
-        </button>
-      </div>
-    );
-  }
-
-  if (completed) {
-    return (
-      <div className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
-          <CheckCircle2 size={48} className="text-green-500" />
-        </div>
-        <h4 className="text-3xl font-bold mb-4 dark:text-white text-slate-900">Mission Complete!</h4>
-        <p className="text-slate-500 dark:text-slate-400 text-lg mb-10">All pairs matched correctly.</p>
-        <button
-          onClick={onComplete}
-          className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-2xl text-xl transition-all"
+          className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-8 sm:px-12 rounded-xl sm:rounded-2xl text-base sm:text-xl transition-all"
         >
           Claim Reward
         </button>
@@ -203,16 +185,16 @@ function Matching({ challenge, onComplete }: { challenge: MatchingChallenge, onC
   }
 
   return (
-    <div className="flex-1 space-y-8">
-      <p className="text-lg text-slate-500 dark:text-slate-400">{challenge.intro}</p>
-      <div className="grid grid-cols-2 gap-8">
-        <div className="space-y-4">
+    <div className="flex-1 space-y-4 sm:space-y-8">
+      <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400">{challenge.intro}</p>
+      <div className="grid grid-cols-2 gap-2 sm:gap-8">
+        <div className="space-y-2 sm:space-y-4">
           {leftItems.map(item => (
             <button
               key={item}
               disabled={matched.includes(item)}
               onClick={() => setSelectedLeft(item)}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left font-medium ${
+              className={`w-full p-2 sm:p-4 rounded-xl border-2 transition-all text-left text-xs sm:text-base font-medium ${
                 matched.includes(item) 
                   ? 'bg-green-500/20 border-green-500 text-green-600 dark:text-green-400 opacity-50' 
                   : selectedLeft === item 
@@ -226,13 +208,13 @@ function Matching({ challenge, onComplete }: { challenge: MatchingChallenge, onC
             </button>
           ))}
         </div>
-        <div className="space-y-4">
+        <div className="space-y-2 sm:space-y-4">
           {rightItems.map(item => (
             <button
               key={item}
               disabled={matched.includes(item) || !selectedLeft}
               onClick={() => handleMatch(item)}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left font-medium ${
+              className={`w-full p-2 sm:p-4 rounded-xl border-2 transition-all text-left text-xs sm:text-base font-medium ${
                 matched.includes(item) 
                   ? 'bg-green-500/20 border-green-500 text-green-600 dark:text-green-400 opacity-50' 
                   : wrong?.[1] === item 
@@ -265,9 +247,9 @@ function Flashcards({ challenge, onComplete }: { challenge: FlashcardChallenge, 
 
   return (
     <div className="flex-1 flex flex-col items-center">
-      <p className="text-lg text-slate-500 dark:text-slate-400 mb-12">{challenge.intro}</p>
+      <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-12">{challenge.intro}</p>
       
-      <div className="w-full max-w-md aspect-[4/3] perspective-1000">
+      <div className="w-full max-w-md aspect-[4/3] perspective-1000 max-h-[40vh] sm:max-h-none">
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
@@ -275,43 +257,43 @@ function Flashcards({ challenge, onComplete }: { challenge: FlashcardChallenge, 
           className="relative w-full h-full cursor-pointer preserve-3d"
         >
           {/* Front */}
-          <div className="absolute inset-0 bg-white dark:bg-slate-800 rounded-[2.5rem] border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center p-8 backface-hidden shadow-xl dark:shadow-2xl">
-            <h4 className="text-4xl font-bold text-center dark:text-white text-slate-900">{challenge.cards[index].front}</h4>
-            <div className="absolute bottom-6 text-slate-400 dark:text-slate-500 text-sm font-bold uppercase tracking-widest">Click to Flip</div>
+          <div className="absolute inset-0 bg-white dark:bg-slate-800 rounded-2xl sm:rounded-[2.5rem] border-2 sm:border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center p-4 sm:p-8 backface-hidden shadow-xl dark:shadow-2xl">
+            <h4 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center dark:text-white text-slate-900">{challenge.cards[index].front}</h4>
+            <div className="absolute bottom-3 sm:bottom-6 text-slate-400 dark:text-slate-500 text-xs sm:text-sm font-bold uppercase tracking-widest">Click to Flip</div>
           </div>
           
           {/* Back */}
-          <div className="absolute inset-0 bg-green-600 rounded-[2.5rem] border-4 border-green-500 flex items-center justify-center p-8 backface-hidden rotate-y-180 shadow-2xl">
-            <p className="text-2xl font-semibold text-center leading-relaxed text-white">
+          <div className="absolute inset-0 bg-green-600 rounded-2xl sm:rounded-[2.5rem] border-2 sm:border-4 border-green-500 flex items-center justify-center p-4 sm:p-8 backface-hidden rotate-y-180 shadow-2xl">
+            <p className="text-base sm:text-2xl font-semibold text-center leading-relaxed text-white">
               {challenge.cards[index].back}
             </p>
           </div>
         </motion.div>
       </div>
 
-      <div className="mt-12 w-full max-w-md flex justify-between items-center">
+      <div className="mt-6 sm:mt-12 w-full max-w-md flex justify-between items-center px-2 sm:px-4">
         <button 
           onClick={() => { setIndex(i => i - 1); setFlipped(false); }}
           disabled={index === 0}
-          className="p-4 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white disabled:opacity-0 transition-all hover:bg-slate-200 dark:hover:bg-slate-700"
+          className="p-3 sm:p-4 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white disabled:opacity-0 transition-all hover:bg-slate-200 dark:hover:bg-slate-700"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
         </button>
         
-        <div className="text-lg font-bold text-slate-400 dark:text-slate-500">
+        <div className="text-sm sm:text-lg font-bold text-slate-400 dark:text-slate-500">
           {index + 1} / {challenge.cards.length}
         </div>
 
         {viewedAll && index === challenge.cards.length - 1 ? (
-          <button onClick={onComplete} className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-green-900/20">
+          <button onClick={onComplete} className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 sm:py-3 px-4 sm:px-8 rounded-xl sm:rounded-2xl text-sm sm:text-base transition-all shadow-lg shadow-green-900/20">
             Finish
           </button>
         ) : (
           <button 
             onClick={handleNext}
-            className="p-4 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white transition-all hover:bg-slate-200 dark:hover:bg-slate-700"
+            className="p-3 sm:p-4 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white transition-all hover:bg-slate-200 dark:hover:bg-slate-700"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={20} className="sm:w-6 sm:h-6" />
           </button>
         )}
       </div>
@@ -343,31 +325,31 @@ function Sorting({ challenge, onComplete }: { challenge: SortingChallenge, onCom
 
   return (
     <div className="flex-1 flex flex-col">
-      <p className="text-lg text-slate-500 dark:text-slate-400 mb-12">{challenge.intro}</p>
+      <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-12">{challenge.intro}</p>
       
-      <div className="flex-1 flex flex-col items-center justify-center mb-12">
+      <div className="flex-1 flex flex-col items-center justify-center mb-6 sm:mb-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentItem.id}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 1.2, opacity: 0 }}
-            className="w-40 h-40 bg-white dark:bg-slate-800 rounded-[2.5rem] border-4 border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-4 shadow-xl dark:shadow-2xl"
+            className="w-24 sm:w-40 h-24 sm:h-40 bg-white dark:bg-slate-800 rounded-2xl sm:rounded-[2.5rem] border-2 sm:border-4 border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-2 sm:gap-4 shadow-xl dark:shadow-2xl"
           >
-            <span className="text-6xl">{currentItem.icon}</span>
-            <span className="font-bold text-lg dark:text-white text-slate-900">{currentItem.name}</span>
+            <span className="text-4xl sm:text-6xl">{currentItem.icon}</span>
+            <span className="font-bold text-sm sm:text-lg dark:text-white text-slate-900">{currentItem.name}</span>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6">
         {challenge.bins.map(bin => (
           <button
             key={bin.id}
             onClick={() => handleSort(bin.id)}
-            className={`p-8 rounded-[2rem] border-4 transition-all flex flex-col items-center gap-4 ${bin.color} ${wrong === bin.id ? 'animate-shake' : 'hover:scale-105'}`}
+            className={`p-4 sm:p-8 rounded-2xl sm:rounded-[2rem] border-2 sm:border-4 transition-all flex flex-col items-center gap-2 sm:gap-4 ${bin.color} ${wrong === bin.id ? 'animate-shake' : 'hover:scale-105'}`}
           >
-            <span className="text-2xl font-bold">{bin.name}</span>
+            <span className="text-base sm:text-2xl font-bold">{bin.name}</span>
           </button>
         ))}
       </div>

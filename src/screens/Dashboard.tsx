@@ -60,7 +60,7 @@ const Dashboard = React.memo(({ userProfile, setUserProfile, onReset, onComplete
   , [selectedMissionId]);
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-[100dvh] overflow-hidden">
       <Sidebar 
         userProfile={userProfile} 
         setUserProfile={setUserProfile}
@@ -72,26 +72,26 @@ const Dashboard = React.memo(({ userProfile, setUserProfile, onReset, onComplete
       />
       
       <main className="flex-1 flex flex-col overflow-hidden relative bg-slate-50 dark:bg-slate-950">
-        <header className="px-6 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800/50 bg-white/80 dark:bg-slate-900/50 backdrop-blur-xl z-20">
-          <div className="flex items-center gap-4">
+        <header className="px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800/50 bg-white/80 dark:bg-slate-900/50 backdrop-blur-xl z-20 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button 
               onClick={() => setIsSidebarOpen(true)} 
-              className="lg:hidden p-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="lg:hidden p-2 sm:p-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
-              <Icon name="Menu" size={20} />
+              <Icon name="Menu" size={18} className="sm:w-5 sm:h-5" />
             </button>
             
             <div className="flex flex-col">
-              <h1 className="text-xl font-black dark:text-white text-slate-900 tracking-tight leading-none">
+              <h1 className="text-lg sm:text-xl font-black dark:text-white text-slate-900 tracking-tight leading-none">
                 {selectedMissionId ? MISSIONS[selectedMissionId].title : view === 'hq' ? 'Mission HQ' : 'Field Guide'}
               </h1>
-              <p className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest mt-1">
+              <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest mt-0.5 sm:mt-1">
                 {selectedMissionId ? 'Active Mission' : 'Command Center'}
               </p>
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden sm:flex flex-col items-end">
               <p className="text-xs font-black dark:text-white text-slate-900">{userProfile.username}</p>
               <div className="flex items-center gap-1.5">
@@ -100,7 +100,7 @@ const Dashboard = React.memo(({ userProfile, setUserProfile, onReset, onComplete
               </div>
             </div>
             <div 
-              className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 p-1.5 border border-slate-200 dark:border-slate-700 shadow-sm" 
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shadow-sm" 
               style={{ color: userProfile.avatar.color }}
               dangerouslySetInnerHTML={{ __html: userProfile.avatar.svg.replace('width="100"', 'width="100%"').replace('height="100"', 'height="100%"') }}
             />
@@ -114,7 +114,7 @@ const Dashboard = React.memo(({ userProfile, setUserProfile, onReset, onComplete
           </div>
         )}
 
-        <div className="flex-1 overflow-y-auto p-4 sm:p-10 scrollbar-none">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-6 lg:p-10 scrollbar-none">
           <AnimatePresence mode="wait">
             {selectedMissionId ? (
               <motion.div key="mission-view" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

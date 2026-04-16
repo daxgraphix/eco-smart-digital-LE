@@ -1,5 +1,6 @@
 import { lazy, Suspense, useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Leaf } from 'lucide-react';
 import { loadProfile, saveProfile, clearProfile, buildUserProfile, DEFAULT_SETTINGS } from './lib/profile';
 import { UserProfile } from './types';
 import ConfirmDialog from './components/ConfirmDialog';
@@ -24,6 +25,27 @@ function applyTheme(theme: 'dark' | 'light') {
   document.body.classList.toggle('dark', isDark);
   document.documentElement.style.colorScheme = theme;
   document.body.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
+}
+
+function LoadingScreen() {
+  return (
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-slate-950">
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+        className="p-4 bg-green-100 dark:bg-green-500/10 rounded-2xl mb-4"
+      >
+        <Leaf size={40} className="text-green-600 dark:text-green-400" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="text-xl font-black text-slate-900 dark:text-white tracking-widest"
+      >
+        ECO<span className="text-green-600 dark:text-green-400">SMART</span>
+      </motion.div>
+    </div>
+  );
 }
 
 export default function App() {
@@ -107,13 +129,13 @@ export default function App() {
   const appThemeClass = isDark ? 'bg-slate-950 text-slate-50' : 'bg-slate-50 text-slate-900';
 
   if (!isLoaded) {
-    return <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-50">Loading...</div>;
+    return <LoadingScreen />;
   }
 
   return (
-    <div data-theme={activeTheme} className="theme-transition" style={{ height: '100%' }}>
-      <div className={`min-h-screen h-full ${fontSizeClass} ${appThemeClass}`}>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-50">Loading...</div>}>
+    <div data-theme={activeTheme} className="theme-transition" style={{ height: '100%', minHeight: '100dvh' }}>
+      <div className={`h-full min-h-[100dvh] ${fontSizeClass} ${appThemeClass}`}>
+        <Suspense fallback={<LoadingScreen />}>
           <AnimatePresence mode="wait">
             {screen === 'splash' && (
               <motion.div key="splash" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="h-full">
